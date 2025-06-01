@@ -1,0 +1,6 @@
+<div class="tooltip-container" *ngIf="selectedItem && selectedItem.description" [@tooltipAnimation]="animationState">
+  <div class="tooltip-content">
+    <h3 class="tooltip-title">{{ selectedItem.description.title }}</h3>
+    <p class="tooltip-body">{{ selectedItem.description.body }}</p>
+  </div>
+</div>

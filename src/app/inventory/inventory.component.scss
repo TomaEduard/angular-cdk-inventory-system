@@ -1,0 +1,375 @@
+:host {
+  box-sizing: border-box;
+  background: #332f2c;
+  color: #dddddd;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.personal-inventory {
+  border: 5px solid red;
+  margin: 0 auto; /* Center horizontally */
+  max-width: fit-content; /* Ensure it doesn't stretch beyond its content */
+}
+.slider-container {
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    min-width: 100px;
+    font-weight: bold;
+    color: #dddddd;
+  }
+
+  .inventory-slider {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .inventory-count {
+    min-width: 80px;
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #dddddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 15px; /* Add margin to separate from slider */
+    align-self: center; /* Ensure vertical centering */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Customize Material slider colors to match the theme */
+::ng-deep {
+  .mat-mdc-slider {
+    --mdc-slider-handle-color: #dddddd;
+    --mdc-slider-focus-handle-color: #ffffff;
+    --mdc-slider-active-track-color: #dddddd;
+    --mdc-slider-inactive-track-color: rgba(221, 221, 221, 0.3);
+    --mat-slider-ripple-color: rgba(221, 221, 221, 0.2);
+    --mat-slider-hover-state-layer-color: rgba(221, 221, 221, 0.1);
+    --mat-slider-focus-state-layer-color: rgba(221, 221, 221, 0.2);
+  }
+}
+
+.inventory-table {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Add gap between rows */
+}
+
+.inventory-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* align items in Main Axis */
+  align-items: flex-start; /* align items in Cross Axis */
+  align-content: flex-start; /* Extra space in Cross Axis */
+  gap: 5px; /* Add gap between cells */
+}
+
+.inventory-cell {
+  width: 72px;
+  height: 72px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* align items in Main Axis */
+  align-items: center; /* align items in Cross Axis */
+  align-content: center; /* Extra space in Cross Axis */
+
+  //background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8709/inventory-atlas.png');
+  //background-position: -229px -331px;
+
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.2);
+  background-color: rgba(18, 18, 18, 0.34);
+
+  &:hover {
+    filter: brightness(1.3);
+    //transform: translateY(-1px);
+
+    &::after {
+      content: '';
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+      pointer-events: none;
+      opacity: 0.8;
+      transition: all 0.2s ease-in-out;
+      z-index: 5;
+    }
+
+    .inventory-item {
+      transform: scale(1);
+      filter: brightness(1.1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.32));
+    }
+
+    /* Disable hover effects when dragging is happening */
+    &.cdk-drop-list-dragging .inventory-item {
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+}
+
+/* single by singel */
+.inventory-row:only-child .inventory-cell:only-child {
+  width: 40px;
+  height: 40px;
+
+  background-position: -30px -288px;
+}
+
+/* ITEMS */
+
+.inventory-item {
+  width: 70px;
+  min-width: 70px;
+  height: 70px;
+  min-height: 70px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+
+  img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+  }
+  background-position: 0px 0px;
+  position: relative;
+}
+
+.inventory-item.dragging,
+.inventory-item.cdk-drag-preview {
+  opacity: 0.85;
+  transform: scale(1);
+  //filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1)) brightness(1.2);
+  //z-index: 1000;
+  //animation: pulse 1.5s infinite ease-in-out;
+
+  /* Try a different approach for cursor hiding */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"), auto !important;
+  pointer-events: none; /* This can help with cursor issues in some browsers */
+
+  /* Use fixed positioning to follow the cursor */
+  position: fixed !important;
+  /* Ensure the preview is centered on the cursor */
+  margin: 0 !important;
+  transform-origin: center center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image:
+            linear-gradient(45deg, white 0, white 10px, transparent 10px),
+            linear-gradient(-45deg, white 0, white 10px, transparent 10px),
+            linear-gradient(135deg, white 0, white 10px, transparent 10px),
+            linear-gradient(-135deg, white 0, white 10px, transparent 10px);
+    background-position:
+            left top,
+            right top,
+            right bottom,
+            left bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 999999 !important;
+  }
+}
+
+.cdk-drag-placeholder {
+  /* Make placeholder invisible to avoid interference with the shadow */
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  /* Keep position absolute for placeholder as it needs to be out of the flow */
+  position: absolute !important;
+}
+
+.cdk-drag-animating {
+  /* Disable animation for the original item to ensure it stays in place */
+  transition: none !important;
+}
+
+.inventory-cell.cdk-drop-list-dragging .inventory-item:not(.cdk-drag-placeholder) {
+  /* Remove transition to prevent any movement */
+  transition: none !important;
+  /* This ensures the original item remains visible as a ghost */
+  opacity: 0.4 !important;
+  filter: grayscale(70%) brightness(0.8) !important;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2), inset 0 0 0 4px rgba(255, 255, 255, 0.39) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  pointer-events: none !important;
+  /* Ensure it stays in place */
+  transform: none !important;
+  /* Position relative to maintain layout */
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Apply the same styling to empty cells during drag operations */
+.inventory-cell.cdk-drop-list-dragging:not(:has(.inventory-item)),
+.inventory-cell.empty-cell.cdk-drop-list-dragging {
+  /* Remove transition to prevent any movement */
+  transition: none !important;
+  /* This ensures the original item remains visible as a ghost */
+  opacity: 0.4 !important;
+  filter: grayscale(70%) brightness(0.8) !important;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2), inset 0 0 0 4px rgba(255, 255, 255, 0.39) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  pointer-events: none !important;
+  /* Ensure it stays in place */
+  transform: none !important;
+  /* Position relative to maintain layout */
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Add global styles for when dragging is happening */
+:host ::ng-deep .cdk-drag-dragging * {
+  cursor: none !important;
+}
+
+/* Target the document body during drag operations */
+:host ::ng-deep body.cdk-drag-dragging {
+  cursor: none !important;
+}
+
+/* Target the drag preview specifically with multiple techniques */
+:host ::ng-deep .cdk-drag-preview {
+  cursor: none !important;
+  /* Use an empty SVG as cursor (1x1 pixel transparent image) */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"), auto !important;
+  /* Disable pointer events to prevent cursor interaction */
+  pointer-events: none !important;
+  /* Ensure the preview is properly positioned */
+  position: fixed !important;
+  margin: 0 !important;
+  transform-origin: center center;
+  /* Add a higher z-index to ensure it appears above other elements */
+  z-index: 9999 !important;
+  /* Prevent the preview from appearing in the top-left corner */
+  top: auto !important;
+  left: auto !important;
+  /* Add a transition for smoother movement */
+  transition: transform 0.1s ease-out !important;
+  /* Ensure the preview is visible */
+  opacity: 1 !important;
+  /* Add a subtle shadow for better visibility */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Add a class to the html element during drag */
+:host ::ng-deep html.cdk-global-dragging {
+  cursor: none !important;
+}
+
+.inventory-item.invalid-drop {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.inventory-item.swapping {
+  z-index: 1000;
+}
+
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) brightness(1.2);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)) brightness(1.4);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.61)) brightness(1.2);
+  }
+}
+
+/* Selected item styling */
+.inventory-item.selected {
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 2px white;
+    pointer-events: none;
+    z-index: 11;
+    box-sizing: border-box;
+  }
+
+  /* Triangular corners */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image:
+      linear-gradient(45deg, white 0, white 10px, transparent 10px),
+      linear-gradient(-45deg, white 0, white 10px, transparent 10px),
+      linear-gradient(135deg, white 0, white 10px, transparent 10px),
+      linear-gradient(-135deg, white 0, white 10px, transparent 10px);
+    background-position:
+      left top,
+      right top,
+      right bottom,
+      left bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 12;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,12 @@
+<div
+	class="display-container"
+	*ngIf="selectedItem && selectedItem.description"
+	[@displayAnimation]="animationState"
+>
+	<div class="display-content">
+		<div class="item-details">
+			<h3 class="item-title">{{ selectedItem.description.title }}</h3>
+			<p class="item-body">{{ selectedItem.description.body }}</p>
+		</div>
+	</div>
+</div>

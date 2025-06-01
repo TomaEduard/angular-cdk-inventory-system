@@ -1,0 +1,1575 @@
+[
+  {
+    "type": "grape",
+    "class": "inventory-item",
+    "itemTypes": ["food", "fruit", "common"],
+    "imagePath": "assets/images/items_34x34/item_0_0.png",
+    "description": {
+      "title": "Grape",
+      "body": "A juicy purple grape. Can be eaten raw."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "apple",
+    "class": "inventory-item",
+    "itemTypes": ["food", "fruit", "common"],
+    "imagePath": "assets/images/items_34x34/item_0_1.png",
+    "description": {
+      "title": "Red Apple",
+      "body": "A crisp, juicy red apple. Restores a small amount of health and reduces hunger."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "berry",
+    "class": "inventory-item",
+    "itemTypes": ["food", "fruit", "common"],
+    "imagePath": "assets/images/items_34x34/item_0_2.png",
+    "description": {
+      "title": "Berry",
+      "body": "A small, sweet berry. Provides a minor health boost."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "mushroom",
+    "class": "inventory-item",
+    "itemTypes": ["food", "fungus", "common"],
+    "imagePath": "assets/images/items_34x34/item_0_3.png",
+    "description": {
+      "title": "Mushroom",
+      "body": "A common forest mushroom. Safe to eat and slightly nutritious."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "bread",
+    "class": "inventory-item",
+    "itemTypes": ["food", "baked", "common"],
+    "imagePath": "assets/images/items_34x34/item_0_4.png",
+    "description": {
+      "title": "Bread",
+      "body": "A freshly baked loaf of bread. Satisfies hunger effectively."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "sword",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "sword", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_5.png",
+    "description": {
+      "title": "Sword",
+      "body": "A sharp sword for combat. Deals moderate damage."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "dagger",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "dagger", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_6.png",
+    "description": {
+      "title": "Dagger",
+      "body": "A small, sharp dagger. Fast attack speed but lower damage."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "mace",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "mace", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_7.png",
+    "description": {
+      "title": "Mace",
+      "body": "A heavy mace. Slow but deals high damage."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "spear",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "spear", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_8.png",
+    "description": {
+      "title": "Spear",
+      "body": "A long spear. Good for keeping enemies at a distance."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "hammer",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "hammer", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_9.png",
+    "description": {
+      "title": "Hammer",
+      "body": "A heavy hammer. Deals crushing damage to enemies."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "staff",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "staff", "magic", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_10.png",
+    "description": {
+      "title": "Wooden Staff",
+      "body": "A basic wooden staff. Enhances magical abilities slightly."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "wand",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "wand", "magic", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_11.png",
+    "description": {
+      "title": "Wooden Wand",
+      "body": "A simple wooden wand. Focuses magical energy for spells."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "book",
+    "class": "inventory-item",
+    "itemTypes": ["book", "magic", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_12.png",
+    "description": {
+      "title": "Spell Book",
+      "body": "A book containing basic spells. Study to learn new magical abilities."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "scroll",
+    "class": "inventory-item",
+    "itemTypes": ["scroll", "magic", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_0_13.png",
+    "description": {
+      "title": "Magic Scroll",
+      "body": "A scroll with magical inscriptions. Contains a single-use spell."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "orange",
+    "class": "inventory-item",
+    "itemTypes": ["food", "fruit", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_0.png",
+    "description": {
+      "title": "Orange",
+      "body": "A juicy orange. Rich in vitamins and restores a small amount of health."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "carrot",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_1.png",
+    "description": {
+      "title": "Carrot",
+      "body": "A fresh orange carrot. Good for your eyesight."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "potato",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_2.png",
+    "description": {
+      "title": "Potato",
+      "body": "A starchy potato. Can be cooked in various ways."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "tomato",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_3.png",
+    "description": {
+      "title": "Tomato",
+      "body": "A ripe red tomato. Juicy and nutritious."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "corn",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_4.png",
+    "description": {
+      "title": "Corn",
+      "body": "A golden ear of corn. Sweet and filling."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "pumpkin",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_5.png",
+    "description": {
+      "title": "Pumpkin",
+      "body": "A large orange pumpkin. Can be used in cooking or crafting."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "cabbage",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_6.png",
+    "description": {
+      "title": "Cabbage",
+      "body": "A leafy green cabbage. Nutritious but not very filling."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "onion",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_7.png",
+    "description": {
+      "title": "Onion",
+      "body": "A pungent onion. Adds flavor to cooked dishes."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "garlic",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_8.png",
+    "description": {
+      "title": "Garlic",
+      "body": "A bulb of garlic. Adds flavor to food and repels certain monsters."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "pepper",
+    "class": "inventory-item",
+    "itemTypes": ["food", "vegetable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_9.png",
+    "description": {
+      "title": "Pepper",
+      "body": "A spicy red pepper. Adds heat to dishes and can be used in potions."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "fish",
+    "class": "inventory-item",
+    "itemTypes": ["food", "meat", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_10.png",
+    "description": {
+      "title": "Fish",
+      "body": "A fresh fish. Can be cooked for better nutritional value."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "meat",
+    "class": "inventory-item",
+    "itemTypes": ["food", "meat", "cookable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_11.png",
+    "description": {
+      "title": "Raw Meat",
+      "body": "A piece of raw meat. Can be cooked for better effects."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "chicken",
+    "class": "inventory-item",
+    "itemTypes": ["food", "meat", "cookable", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_12.png",
+    "description": {
+      "title": "Raw Chicken",
+      "body": "A raw chicken. Should be cooked before eating."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "egg",
+    "class": "inventory-item",
+    "itemTypes": ["food", "ingredient", "common"],
+    "imagePath": "assets/images/items_34x34/item_1_13.png",
+    "description": {
+      "title": "Egg",
+      "body": "A fresh egg. Can be cooked or used in recipes."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "cheese",
+    "class": "inventory-item",
+    "itemTypes": ["food", "dairy", "common"],
+    "imagePath": "assets/images/items_34x34/item_2_0.png",
+    "description": {
+      "title": "Cheese",
+      "body": "A wedge of cheese. Nutritious and satisfying."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "milk",
+    "class": "inventory-item",
+    "itemTypes": ["food", "dairy", "common"],
+    "imagePath": "assets/images/items_34x34/item_2_1.png",
+    "description": {
+      "title": "Milk",
+      "body": "A bottle of fresh milk. Restores a small amount of health."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "water",
+    "class": "inventory-item",
+    "itemTypes": ["drink", "common"],
+    "imagePath": "assets/images/items_34x34/item_2_2.png",
+    "description": {
+      "title": "Water",
+      "body": "A flask of clean water. Quenches thirst."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "health_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "healing", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_3.png",
+    "description": {
+      "title": "Health Potion",
+      "body": "A small vial of red liquid. Restores 25 health points when consumed."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "stamina_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "stamina", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_4.png",
+    "description": {
+      "title": "Stamina Potion",
+      "body": "A small vial of green liquid. Restores 25 stamina points when consumed."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "mana_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "mana", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_5.png",
+    "description": {
+      "title": "Mana Potion",
+      "body": "A small vial of blue liquid. Restores 25 mana points when consumed."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "strength_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "buff", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_6.png",
+    "description": {
+      "title": "Strength Potion",
+      "body": "A small vial of orange liquid. Temporarily increases strength."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "agility_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "buff", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_7.png",
+    "description": {
+      "title": "Agility Potion",
+      "body": "A small vial of yellow liquid. Temporarily increases agility."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "intelligence_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "buff", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_8.png",
+    "description": {
+      "title": "Intelligence Potion",
+      "body": "A small vial of purple liquid. Temporarily increases intelligence."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "poison",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "poison", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_9.png",
+    "description": {
+      "title": "Poison",
+      "body": "A small vial of toxic green liquid. Causes damage over time when applied to weapons."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "antidote",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "healing", "rare"],
+    "imagePath": "assets/images/items_34x34/item_2_10.png",
+    "description": {
+      "title": "Antidote",
+      "body": "A small vial of clear liquid. Cures poison effects."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "elixir",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "healing", "epic"],
+    "imagePath": "assets/images/items_34x34/item_2_11.png",
+    "description": {
+      "title": "Elixir",
+      "body": "A powerful magical elixir. Restores all health, mana, and stamina."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "invisibility_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "buff", "epic"],
+    "imagePath": "assets/images/items_34x34/item_2_12.png",
+    "description": {
+      "title": "Invisibility Potion",
+      "body": "A rare potion that grants temporary invisibility."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "transformation_potion",
+    "class": "inventory-item",
+    "itemTypes": ["potion", "transformation", "epic"],
+    "imagePath": "assets/images/items_34x34/item_2_13.png",
+    "description": {
+      "title": "Transformation Potion",
+      "body": "A mysterious potion that temporarily transforms the user into a different creature."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "gold_coin",
+    "class": "inventory-item",
+    "itemTypes": ["currency", "common"],
+    "imagePath": "assets/images/items_34x34/item_3_0.png",
+    "description": {
+      "title": "Gold Coin",
+      "body": "A standard gold coin. Used as currency throughout the realm."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "silver_coin",
+    "class": "inventory-item",
+    "itemTypes": ["currency", "common"],
+    "imagePath": "assets/images/items_34x34/item_3_1.png",
+    "description": {
+      "title": "Silver Coin",
+      "body": "A silver coin. Worth less than gold but still valuable."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "bronze_coin",
+    "class": "inventory-item",
+    "itemTypes": ["currency", "common"],
+    "imagePath": "assets/images/items_34x34/item_3_2.png",
+    "description": {
+      "title": "Bronze Coin",
+      "body": "A bronze coin. The most common form of currency."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "diamond",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "epic"],
+    "imagePath": "assets/images/items_34x34/item_3_3.png",
+    "description": {
+      "title": "Diamond",
+      "body": "A sparkling diamond. Extremely valuable and can be used in high-level crafting."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "emerald",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "epic"],
+    "imagePath": "assets/images/items_34x34/item_3_4.png",
+    "description": {
+      "title": "Emerald",
+      "body": "A beautiful green emerald. Highly valuable and used in magical crafting."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "sapphire",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "epic"],
+    "imagePath": "assets/images/items_34x34/item_3_5.png",
+    "description": {
+      "title": "Sapphire",
+      "body": "A deep blue sapphire. Valuable and used in water-based magical items."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "amethyst",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_6.png",
+    "description": {
+      "title": "Amethyst",
+      "body": "A purple amethyst. Valuable and used in mind-affecting magical items."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "ruby",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "epic"],
+    "imagePath": "assets/images/items_34x34/item_3_7.png",
+    "description": {
+      "title": "Ruby",
+      "body": "A sparkling red gemstone. Highly valuable and can be used in crafting magical items."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "topaz",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_8.png",
+    "description": {
+      "title": "Topaz",
+      "body": "A golden topaz. Valuable and used in light-based magical items."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "opal",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_9.png",
+    "description": {
+      "title": "Opal",
+      "body": "An iridescent opal. Valuable and used in illusion-based magical items."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "pearl",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_10.png",
+    "description": {
+      "title": "Pearl",
+      "body": "A lustrous pearl. Valuable and used in water-based magical items."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "jade",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_11.png",
+    "description": {
+      "title": "Jade",
+      "body": "A smooth green jade. Valuable and used in earth-based magical items."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "amber",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_12.png",
+    "description": {
+      "title": "Amber",
+      "body": "A piece of fossilized amber. Valuable and sometimes contains preserved insects."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "obsidian",
+    "class": "inventory-item",
+    "itemTypes": ["gem", "valuable", "rare"],
+    "imagePath": "assets/images/items_34x34/item_3_13.png",
+    "description": {
+      "title": "Obsidian",
+      "body": "A piece of black obsidian. Used in dark magic and crafting sharp weapons."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "leather_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "common"],
+    "imagePath": "assets/images/items_34x34/item_4_0.png",
+    "description": {
+      "title": "Leather Helmet",
+      "body": "A basic leather helmet. Provides minimal protection."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "leather_chestplate",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "chestplate", "common"],
+    "imagePath": "assets/images/items_34x34/item_4_1.png",
+    "description": {
+      "title": "Leather Chestplate",
+      "body": "A basic leather chestplate. Provides minimal protection for the torso."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "wooden_shield",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "shield", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_4_2.png",
+    "description": {
+      "title": "Wooden Shield",
+      "body": "A basic wooden shield. Provides minimal protection against physical attacks."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "iron_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_4_3.png",
+    "description": {
+      "title": "Iron Helmet",
+      "body": "An iron helmet. Provides good protection for the head."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "iron_chestplate",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "chestplate", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_4_4.png",
+    "description": {
+      "title": "Iron Chestplate",
+      "body": "An iron chestplate. Provides good protection for the torso."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "iron_shield",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "shield", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_4_5.png",
+    "description": {
+      "title": "Iron Shield",
+      "body": "An iron shield. Provides good protection against physical attacks."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "steel_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "rare"],
+    "imagePath": "assets/images/items_34x34/item_4_6.png",
+    "description": {
+      "title": "Steel Helmet",
+      "body": "A steel helmet. Provides excellent protection for the head."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "steel_chestplate",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "chestplate", "rare"],
+    "imagePath": "assets/images/items_34x34/item_4_7.png",
+    "description": {
+      "title": "Steel Chestplate",
+      "body": "A steel chestplate. Provides excellent protection for the torso."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "steel_shield",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "shield", "rare"],
+    "imagePath": "assets/images/items_34x34/item_4_8.png",
+    "description": {
+      "title": "Steel Shield",
+      "body": "A steel shield. Provides excellent protection against physical attacks."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "mithril_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "epic"],
+    "imagePath": "assets/images/items_34x34/item_4_9.png",
+    "description": {
+      "title": "Mithril Helmet",
+      "body": "A mithril helmet. Provides superior protection and is lightweight."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "mithril_chestplate",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "chestplate", "epic"],
+    "imagePath": "assets/images/items_34x34/item_4_10.png",
+    "description": {
+      "title": "Mithril Chestplate",
+      "body": "A mithril chestplate. Provides superior protection for the torso and is lightweight."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "mithril_shield",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "shield", "epic"],
+    "imagePath": "assets/images/items_34x34/item_4_11.png",
+    "description": {
+      "title": "Mithril Shield",
+      "body": "A mithril shield. Provides superior protection against physical and magical attacks."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "dragon_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "legendary"],
+    "imagePath": "assets/images/items_34x34/item_4_12.png",
+    "description": {
+      "title": "Dragon Helmet",
+      "body": "A helmet forged from dragon scales. Provides unmatched protection and fire resistance."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "dragon_chestplate",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "chestplate", "legendary"],
+    "imagePath": "assets/images/items_34x34/item_4_13.png",
+    "description": {
+      "title": "Dragon Chestplate",
+      "body": "A chestplate forged from dragon scales. Provides unmatched protection and fire resistance."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "leather_boots",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "boots", "common"],
+    "imagePath": "assets/images/items_34x34/item_5_0.png",
+    "description": {
+      "title": "Leather Boots",
+      "body": "Basic leather boots. Provides minimal protection for the feet."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "leather_gloves",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "gloves", "common"],
+    "imagePath": "assets/images/items_34x34/item_5_1.png",
+    "description": {
+      "title": "Leather Gloves",
+      "body": "Basic leather gloves. Provides minimal protection for the hands."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "leather_pants",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "pants", "common"],
+    "imagePath": "assets/images/items_34x34/item_5_2.png",
+    "description": {
+      "title": "Leather Pants",
+      "body": "Basic leather pants. Provides minimal protection for the legs."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "iron_boots",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "boots", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_3.png",
+    "description": {
+      "title": "Iron Boots",
+      "body": "Iron boots. Provides good protection for the feet."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "iron_gloves",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "gloves", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_4.png",
+    "description": {
+      "title": "Iron Gauntlets",
+      "body": "Iron gauntlets. Provides good protection for the hands."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "iron_pants",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "pants", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_5.png",
+    "description": {
+      "title": "Iron Leggings",
+      "body": "Iron leggings. Provides good protection for the legs."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "steel_boots",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "boots", "rare"],
+    "imagePath": "assets/images/items_34x34/item_5_6.png",
+    "description": {
+      "title": "Steel Boots",
+      "body": "Steel boots. Provides excellent protection for the feet."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "steel_gloves",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "gloves", "rare"],
+    "imagePath": "assets/images/items_34x34/item_5_7.png",
+    "description": {
+      "title": "Steel Gauntlets",
+      "body": "Steel gauntlets. Provides excellent protection for the hands."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "steel_pants",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "pants", "rare"],
+    "imagePath": "assets/images/items_34x34/item_5_8.png",
+    "description": {
+      "title": "Steel Leggings",
+      "body": "Steel leggings. Provides excellent protection for the legs."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "mithril_boots",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "boots", "epic"],
+    "imagePath": "assets/images/items_34x34/item_5_9.png",
+    "description": {
+      "title": "Mithril Boots",
+      "body": "Mithril boots. Provides superior protection for the feet and is lightweight."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "axe",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "axe", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_10.png",
+    "description": {
+      "title": "Axe",
+      "body": "A sturdy axe. Good for chopping trees and combat."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "pickaxe",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "mining", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_11.png",
+    "description": {
+      "title": "Pickaxe",
+      "body": "A sturdy pickaxe. Used for mining ore and stone."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "shovel",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "digging", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_12.png",
+    "description": {
+      "title": "Shovel",
+      "body": "A sturdy shovel. Used for digging dirt and sand."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "hoe",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "farming", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_5_13.png",
+    "description": {
+      "title": "Hoe",
+      "body": "A sturdy hoe. Used for tilling soil for farming."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "wooden_bow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "bow", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_6_0.png",
+    "description": {
+      "title": "Wooden Bow",
+      "body": "A simple wooden bow. Good for hunting and long-range combat."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "arrow",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "arrow", "common"],
+    "imagePath": "assets/images/items_34x34/item_6_1.png",
+    "description": {
+      "title": "Arrow",
+      "body": "A standard arrow. Used with bows for ranged attacks."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "fire_arrow",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "arrow", "fire", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_6_2.png",
+    "description": {
+      "title": "Fire Arrow",
+      "body": "An arrow with a flaming tip. Deals additional fire damage."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "ice_arrow",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "arrow", "ice", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_6_3.png",
+    "description": {
+      "title": "Ice Arrow",
+      "body": "An arrow with a frozen tip. Deals additional ice damage and can slow targets."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "hunting_bow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "bow", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_6_4.png",
+    "description": {
+      "title": "Hunting Bow",
+      "body": "A well-crafted hunting bow. More accurate and powerful than a standard bow."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "longbow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "bow", "rare"],
+    "imagePath": "assets/images/items_34x34/item_6_5.png",
+    "description": {
+      "title": "Longbow",
+      "body": "A long, powerful bow. Greater range and damage than standard bows."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "crossbow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "crossbow", "rare"],
+    "imagePath": "assets/images/items_34x34/item_6_6.png",
+    "description": {
+      "title": "Crossbow",
+      "body": "A mechanical crossbow. More powerful than a bow but slower to reload."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "bolt",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "bolt", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_6_7.png",
+    "description": {
+      "title": "Crossbow Bolt",
+      "body": "A heavy bolt for crossbows. Deals more damage than standard arrows."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "fire_bolt",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "bolt", "fire", "rare"],
+    "imagePath": "assets/images/items_34x34/item_6_8.png",
+    "description": {
+      "title": "Fire Bolt",
+      "body": "A crossbow bolt with a flaming tip. Deals additional fire damage."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "ice_bolt",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "bolt", "ice", "rare"],
+    "imagePath": "assets/images/items_34x34/item_6_9.png",
+    "description": {
+      "title": "Ice Bolt",
+      "body": "A crossbow bolt with a frozen tip. Deals additional ice damage and can slow targets."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "poison_bolt",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "bolt", "poison", "rare"],
+    "imagePath": "assets/images/items_34x34/item_6_10.png",
+    "description": {
+      "title": "Poison Bolt",
+      "body": "A crossbow bolt coated with poison. Deals damage over time to targets."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "explosive_bolt",
+    "class": "inventory-item",
+    "itemTypes": ["ammunition", "bolt", "explosive", "epic"],
+    "imagePath": "assets/images/items_34x34/item_6_11.png",
+    "description": {
+      "title": "Explosive Bolt",
+      "body": "A crossbow bolt with an explosive tip. Deals area damage on impact."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "elven_bow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "bow", "epic"],
+    "imagePath": "assets/images/items_34x34/item_6_12.png",
+    "description": {
+      "title": "Elven Bow",
+      "body": "A finely crafted elven bow. Exceptional accuracy and power."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "dwarven_crossbow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "crossbow", "epic"],
+    "imagePath": "assets/images/items_34x34/item_6_13.png",
+    "description": {
+      "title": "Dwarven Crossbow",
+      "body": "A masterfully crafted dwarven crossbow. Exceptional power and durability."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "cloth_hat",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "hat", "common"],
+    "imagePath": "assets/images/items_34x34/item_7_0.png",
+    "description": {
+      "title": "Cloth Hat",
+      "body": "A simple cloth hat. Provides minimal protection but is comfortable."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "wizard_hat",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "hat", "magic", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_7_1.png",
+    "description": {
+      "title": "Wizard Hat",
+      "body": "A pointed wizard hat. Enhances magical abilities slightly."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "crown",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "crown", "rare"],
+    "imagePath": "assets/images/items_34x34/item_7_2.png",
+    "description": {
+      "title": "Golden Crown",
+      "body": "A golden crown. Symbol of royalty and authority."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "circlet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "circlet", "magic", "rare"],
+    "imagePath": "assets/images/items_34x34/item_7_3.png",
+    "description": {
+      "title": "Mage's Circlet",
+      "body": "A magical circlet. Enhances magical abilities and focus."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "hood",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "hood", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_7_4.png",
+    "description": {
+      "title": "Leather Hood",
+      "body": "A leather hood. Provides some protection and conceals identity."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "bandana",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "bandana", "common"],
+    "imagePath": "assets/images/items_34x34/item_7_5.png",
+    "description": {
+      "title": "Bandana",
+      "body": "A cloth bandana. Can be worn on the head or face."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "feathered_hat",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "hat", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_7_6.png",
+    "description": {
+      "title": "Feathered Hat",
+      "body": "A stylish hat with a feather. Popular among bards and nobles."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "horned_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "rare"],
+    "imagePath": "assets/images/items_34x34/item_7_7.png",
+    "description": {
+      "title": "Horned Helmet",
+      "body": "A helmet with intimidating horns. Strikes fear into enemies."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "iron_helmet_alt",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "rare"],
+    "imagePath": "assets/images/items_34x34/item_7_8.png",
+    "description": {
+      "title": "Reinforced Iron Helmet",
+      "body": "A reinforced iron helmet with additional plating. Provides superior protection for your head in combat."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "winged_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "epic"],
+    "imagePath": "assets/images/items_34x34/item_7_9.png",
+    "description": {
+      "title": "Winged Helmet",
+      "body": "A helmet with decorative wings. Symbol of valor and swiftness."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "crystal_crown",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "crown", "magic", "epic"],
+    "imagePath": "assets/images/items_34x34/item_7_10.png",
+    "description": {
+      "title": "Crystal Crown",
+      "body": "A crown made of enchanted crystal. Greatly enhances magical abilities."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "demonic_helmet",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "helmet", "dark", "epic"],
+    "imagePath": "assets/images/items_34x34/item_7_11.png",
+    "description": {
+      "title": "Demonic Helmet",
+      "body": "A helmet with demonic features. Enhances dark magic and intimidates enemies."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "angelic_halo",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "halo", "holy", "epic"],
+    "imagePath": "assets/images/items_34x34/item_7_12.png",
+    "description": {
+      "title": "Angelic Halo",
+      "body": "A glowing halo. Enhances holy magic and provides divine protection."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "jester_hat",
+    "class": "inventory-item",
+    "itemTypes": ["armor", "hat", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_7_13.png",
+    "description": {
+      "title": "Jester's Hat",
+      "body": "A colorful jester's hat. Entertaining but provides little protection."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "magic_orb",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "orb", "rare"],
+    "imagePath": "assets/images/items_34x34/item_8_0.png",
+    "description": {
+      "title": "Magic Orb",
+      "body": "A glowing orb filled with magical energy. Used for scrying and enhancing spells."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "crystal_ball",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "divination", "rare"],
+    "imagePath": "assets/images/items_34x34/item_8_1.png",
+    "description": {
+      "title": "Crystal Ball",
+      "body": "A clear crystal ball. Used by fortune tellers and mages to see distant places and possible futures."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "magic_lamp",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "artifact", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_2.png",
+    "description": {
+      "title": "Magic Lamp",
+      "body": "An ornate lamp with mystical properties. Legends say it once contained a powerful djinn."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "fireball_scroll",
+    "class": "inventory-item",
+    "itemTypes": ["scroll", "magic", "fire", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_3.png",
+    "description": {
+      "title": "Fireball Scroll",
+      "body": "A magical scroll that teaches the Fireball spell. Consume to learn the spell permanently."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_staff",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "staff", "magic", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_4.png",
+    "description": {
+      "title": "Magic Staff",
+      "body": "A wooden staff imbued with magical energy. Increases spell damage and mana regeneration."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_wand",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "wand", "magic", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_5.png",
+    "description": {
+      "title": "Magic Wand",
+      "body": "An ornate wand with powerful enchantments. Focuses magical energy for advanced spells."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "spell_tome",
+    "class": "inventory-item",
+    "itemTypes": ["book", "magic", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_6.png",
+    "description": {
+      "title": "Spell Tome",
+      "body": "An ancient tome containing powerful spells. Study to learn advanced magical abilities."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "enchanted_scroll",
+    "class": "inventory-item",
+    "itemTypes": ["scroll", "magic", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_7.png",
+    "description": {
+      "title": "Enchanted Scroll",
+      "body": "A scroll with powerful magical inscriptions. Contains a single-use advanced spell."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "arcane_focus",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "focus", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_8.png",
+    "description": {
+      "title": "Arcane Focus",
+      "body": "A mystical object that helps channel magical energy. Enhances spell casting and reduces mana cost."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_amulet",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "amulet", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_9.png",
+    "description": {
+      "title": "Magic Amulet",
+      "body": "An amulet imbued with magical properties. Provides protection against harmful spells."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_ring",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "ring", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_10.png",
+    "description": {
+      "title": "Magic Ring",
+      "body": "A ring with magical properties. Enhances the wearer's magical abilities."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_pendant",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "pendant", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_11.png",
+    "description": {
+      "title": "Magic Pendant",
+      "body": "A pendant with magical properties. Provides protection and enhances magical abilities."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_bracelet",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "bracelet", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_12.png",
+    "description": {
+      "title": "Magic Bracelet",
+      "body": "A bracelet with magical properties. Enhances the wearer's magical abilities and provides protection."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "magic_talisman",
+    "class": "inventory-item",
+    "itemTypes": ["magic", "talisman", "epic"],
+    "imagePath": "assets/images/items_34x34/item_8_13.png",
+    "description": {
+      "title": "Magic Talisman",
+      "body": "A talisman with powerful magical properties. Provides protection against harmful magic and enhances spellcasting."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "potion_bottle",
+    "class": "inventory-item",
+    "itemTypes": ["container", "potion", "common"],
+    "imagePath": "assets/images/items_34x34/item_9_0.png",
+    "description": {
+      "title": "Empty Potion Bottle",
+      "body": "An empty glass bottle. Can be filled with potions or other liquids."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "flask",
+    "class": "inventory-item",
+    "itemTypes": ["container", "potion", "common"],
+    "imagePath": "assets/images/items_34x34/item_9_1.png",
+    "description": {
+      "title": "Flask",
+      "body": "A small flask for carrying liquids. Can be filled with potions or other beverages."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "vial",
+    "class": "inventory-item",
+    "itemTypes": ["container", "potion", "common"],
+    "imagePath": "assets/images/items_34x34/item_9_2.png",
+    "description": {
+      "title": "Vial",
+      "body": "A small glass vial. Perfect for storing small amounts of potions or reagents."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "cauldron",
+    "class": "inventory-item",
+    "itemTypes": ["container", "alchemy", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_9_3.png",
+    "description": {
+      "title": "Cauldron",
+      "body": "A small cauldron for brewing potions. Essential for alchemists and witches."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "mortar_pestle",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "alchemy", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_9_4.png",
+    "description": {
+      "title": "Mortar and Pestle",
+      "body": "A tool for grinding ingredients. Used in alchemy and potion-making."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "alembic",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "alchemy", "rare"],
+    "imagePath": "assets/images/items_34x34/item_9_5.png",
+    "description": {
+      "title": "Alembic",
+      "body": "A distillation apparatus used in alchemy. Helps create more potent potions."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "herb_pouch",
+    "class": "inventory-item",
+    "itemTypes": ["container", "herb", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_9_6.png",
+    "description": {
+      "title": "Herb Pouch",
+      "body": "A small pouch for carrying herbs and other alchemical ingredients."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "alchemy_kit",
+    "class": "inventory-item",
+    "itemTypes": ["tool", "alchemy", "rare"],
+    "imagePath": "assets/images/items_34x34/item_9_7.png",
+    "description": {
+      "title": "Alchemy Kit",
+      "body": "A portable kit containing basic tools for alchemy. Allows for potion-making on the go."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "herb_bundle",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "herb", "common"],
+    "imagePath": "assets/images/items_34x34/item_9_8.png",
+    "description": {
+      "title": "Herb Bundle",
+      "body": "A bundle of dried herbs. Used in cooking and alchemy."
+    },
+    "rarity": "common"
+  },
+  {
+    "type": "mushroom_cluster",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "fungus", "uncommon"],
+    "imagePath": "assets/images/items_34x34/item_9_9.png",
+    "description": {
+      "title": "Mushroom Cluster",
+      "body": "A cluster of unusual mushrooms. Used in alchemy and potion-making."
+    },
+    "rarity": "uncommon"
+  },
+  {
+    "type": "crystal_shard",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "crystal", "rare"],
+    "imagePath": "assets/images/items_34x34/item_9_10.png",
+    "description": {
+      "title": "Crystal Shard",
+      "body": "A shard of magical crystal. Used in enchanting and high-level alchemy."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "magical_essence",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "magic", "rare"],
+    "imagePath": "assets/images/items_34x34/item_9_11.png",
+    "description": {
+      "title": "Magical Essence",
+      "body": "A vial of concentrated magical essence. A key ingredient in powerful potions and enchantments."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "dragon_scale",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "monster", "epic"],
+    "imagePath": "assets/images/items_34x34/item_9_12.png",
+    "description": {
+      "title": "Dragon Scale",
+      "body": "A scale from a dragon. Extremely valuable and used in the most powerful potions and enchantments."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "phoenix_feather",
+    "class": "inventory-item",
+    "itemTypes": ["ingredient", "monster", "epic"],
+    "imagePath": "assets/images/items_34x34/item_9_13.png",
+    "description": {
+      "title": "Phoenix Feather",
+      "body": "A feather from a phoenix. Has powerful regenerative properties and is used in resurrection potions."
+    },
+    "rarity": "epic"
+  },
+  {
+    "type": "fire_sword",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "sword", "enchanted", "fire", "rare"],
+    "imagePath": "assets/images/items_34x34/item_28_1.png",
+    "description": {
+      "title": "Fire Sword",
+      "body": "A magical sword imbued with fire. Deals additional fire damage."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "fire_bow",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "bow", "enchanted", "fire", "rare"],
+    "imagePath": "assets/images/items_34x34/item_11_7.png",
+    "description": {
+      "title": "Fire Bow",
+      "body": "A magical bow that shoots flaming arrows. Effective at long range."
+    },
+    "rarity": "rare"
+  },
+  {
+    "type": "fire_axe",
+    "class": "inventory-item",
+    "itemTypes": ["weapon", "axe", "enchanted", "fire", "rare"],
+    "imagePath": "assets/images/items_34x34/item_10_9.png",
+    "description": {
+      "title": "Fire Axe",
+      "body": "A magical axe imbued with fire. Deals additional fire damage and can burn trees."
+    },
+    "rarity": "rare"
+  }
+]

@@ -1,0 +1,134 @@
+<div class="slider-container" style="">
+    <div class="slider-row">
+        <label for="row-count">Rows: {{rowCount}}</label>
+        <mat-slider class="inventory-slider" min="1" max="50" step="1" [discrete]="true">
+            <input matSliderThumb [(ngModel)]="rowCount" (valueChange)="onRowCountChange($event)" id="row-count">
+        </mat-slider>
+    </div>
+    <div class="slider-row">
+        <label for="column-count">Columns: {{columnCount}}</label>
+        <mat-slider class="inventory-slider" min="1" max="50" step="1" [discrete]="true">
+            <input matSliderThumb [(ngModel)]="columnCount" (valueChange)="onColumnCountChange($event)" id="column-count">
+        </mat-slider>
+    </div>
+    <div class="slider-row">
+        <label for="item-density">Number of Items: {{itemDensity}}</label>
+        <mat-slider class="inventory-slider" min="0" max="200" step="1" [discrete]="true">
+            <input matSliderThumb [(ngModel)]="itemDensity" (valueChange)="onItemDensityChange($event)" id="item-density">
+        </mat-slider>
+        <div class="inventory-count">{{itemCount}}/{{totalSlots}}</div>
+    </div>
+</div>
+
+<div class="inventory-table personal-inventory" id="personal-inventory" #personalInventory>
+ @for (row of personalInventoryData; track $index; let rowIndex = $index) {
+		<div class="inventory-row">
+			@for (cell of row; track $index; let cellIndex = $index) {
+				<div class="inventory-cell"
+				     [class.empty-cell]="!cell.type"
+				     cdkDropList
+				     [cdkDropListData]="[cell]"
+				     (cdkDropListDropped)="drop($event, rowIndex, personalInventoryData)">
+					@if (cell.type) {
+						<div class="inventory-item"
+						     cdkDrag
+						     [cdkDragData]="cell"
+						     [attr.data-item-type]="cell.itemTypes.join(' ')"
+						     [class.selected]="selectedItem === cell"
+						     (cdkDragStarted)="dragStarted($event)"
+						     (click)="onItemClick(cell)">
+							<img *ngIf="cell.imagePath" [src]="cell.imagePath" alt="{{cell.type}}" width="70" height="70">
+						</div>
+					}
+				</div>
+			}
+		</div>
+	}
+</div>
+
+<br />
+
+Chest:
+<div class="inventory-table">
+ @for (row of chestInventoryData; track $index; let rowIndex = $index) {
+		<div class="inventory-row">
+			@for (cell of row; track $index; let cellIndex = $index) {
+				<div class="inventory-cell"
+				     [class.empty-cell]="!cell.type"
+				     cdkDropList
+				     [cdkDropListData]="[cell]"
+				     (cdkDropListDropped)="drop($event, rowIndex, chestInventoryData)">
+					@if (cell.type) {
+						<div class="inventory-item"
+						     cdkDrag
+						     [cdkDragData]="cell"
+						     [attr.data-item-type]="cell.itemTypes.join(' ')"
+						     [class.selected]="selectedItem === cell"
+						     (cdkDragStarted)="dragStarted($event)"
+						     (click)="onItemClick(cell)">
+							<img *ngIf="cell.imagePath" [src]="cell.imagePath" alt="{{cell.type}}" width="70" height="70">
+						</div>
+					}
+				</div>
+			}
+		</div>
+	}
+</div>
+
+<br />
+
+Furnace:
+<div class="inventory-table" data-item-filter-whitelist="cookable">
+ @for (row of furnaceInventoryData; track $index; let rowIndex = $index) {
+		<div class="inventory-row">
+			@for (cell of row; track $index; let cellIndex = $index) {
+				<div class="inventory-cell"
+				     [class.empty-cell]="!cell.type"
+				     cdkDropList
+				     [cdkDropListData]="[cell]"
+				     (cdkDropListDropped)="drop($event, rowIndex, furnaceInventoryData)">
+					@if (cell.type) {
+						<div class="inventory-item"
+						     cdkDrag
+						     [cdkDragData]="cell"
+						     [attr.data-item-type]="cell.itemTypes.join(' ')"
+						     [class.selected]="selectedItem === cell"
+						     (cdkDragStarted)="dragStarted($event)"
+						     (click)="onItemClick(cell)">
+							<img *ngIf="cell.imagePath" [src]="cell.imagePath" alt="{{cell.type}}" width="70" height="70">
+						</div>
+					}
+				</div>
+			}
+		</div>
+	}
+</div>
+
+<br />
+
+Only enchanted weapons that are not an axe:
+<div class="inventory-table" data-item-filter-whitelist="weapon+enchanted" data-item-filter-blacklist="axe">
+ @for (row of enchantedWeaponsInventoryData; track $index; let rowIndex = $index) {
+		<div class="inventory-row">
+			@for (cell of row; track $index; let cellIndex = $index) {
+				<div class="inventory-cell"
+				     [class.empty-cell]="!cell.type"
+				     cdkDropList
+				     [cdkDropListData]="[cell]"
+				     (cdkDropListDropped)="drop($event, rowIndex, enchantedWeaponsInventoryData)">
+					@if (cell.type) {
+						<div class="inventory-item"
+						     cdkDrag
+						     [cdkDragData]="cell"
+						     [attr.data-item-type]="cell.itemTypes.join(' ')"
+						     [class.selected]="selectedItem === cell"
+						     (cdkDragStarted)="dragStarted($event)"
+						     (click)="onItemClick(cell)">
+							<img *ngIf="cell.imagePath" [src]="cell.imagePath" alt="{{cell.type}}" width="70" height="70">
+						</div>
+					}
+				</div>
+			}
+		</div>
+	}
+</div>
