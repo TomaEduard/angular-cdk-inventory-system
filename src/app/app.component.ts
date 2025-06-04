@@ -11,7 +11,7 @@ import { SelectedItemService } from './services/selected-item.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-web3-game';
+  title = 'angular-cdk-inventory-system';
 
   constructor(private selectedItemService: SelectedItemService) {}
 

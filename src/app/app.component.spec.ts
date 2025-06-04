@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'angular-web3-game' title`, () => {
+  it(`should have the 'angular-cdk-inventory-system' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-web3-game');
+    expect(app.title).toEqual('angular-cdk-inventory-system');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-web3-game');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-cdk-inventory-system');
   });
 });

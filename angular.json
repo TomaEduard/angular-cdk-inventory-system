@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-web3-game": {
+    "angular-cdk-inventory-system": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-web3-game",
+            "outputPath": "dist/angular-cdk-inventory-system",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-web3-game:build:production"
+              "buildTarget": "angular-cdk-inventory-system:build:production"
             },
             "development": {
-              "buildTarget": "angular-web3-game:build:development"
+              "buildTarget": "angular-cdk-inventory-system:build:development"
             }
           },
           "defaultConfiguration": "development"

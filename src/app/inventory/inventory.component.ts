@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule, CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList } from '@angular/cdk/drag-drop';
@@ -6,6 +6,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SelectedItemService, InventoryItem, Description } from '../services/selected-item.service';
 import { InventoryService } from '../services/inventory.service';
 import { take } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-inventory',
@@ -14,7 +15,7 @@ import { take } from 'rxjs/operators';
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })
-export class InventoryComponent implements OnInit, AfterViewInit {
+export class InventoryComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren(CdkDropList) dropLists!: QueryList<CdkDropList>;
   @ViewChild('personalInventory') personalInventory!: ElementRef;
 
@@ -27,6 +28,9 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   totalSlots = 0;
 
   selectedItem: InventoryItem | null = null;
+
+  // Subscriptions management
+  private subscriptions: Subscription[] = [];
 
 
   // Personal inventory data - initialized as empty, will be populated in ngOnInit
@@ -154,9 +158,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // Subscribe to the selectedItem$ observable to track the currently selected item
-    this.selectedItemService.selectedItem$.subscribe(item => {
+    const selectedItemSub = this.selectedItemService.selectedItem$.subscribe(item => {
       this.selectedItem = item;
     });
+    this.subscriptions.push(selectedItemSub);
 
     // Initialize the inventory with a default structure and populate it with items
     // This ensures that the inventory is populated with itemDensity items during initialization
@@ -177,7 +182,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
         console.log('Item definitions not loaded, inventory already populated with default items...');
 
         // Still try to subscribe again in case the item definitions are loaded later
-        this.inventoryService.itemDefinitionsLoaded$.pipe(
+        const definitionsLoadedSub = this.inventoryService.itemDefinitionsLoaded$.pipe(
           // Skip the first emission (which we just processed)
           // and take only the next one where loaded is true
           take(1)
@@ -188,8 +193,15 @@ export class InventoryComponent implements OnInit, AfterViewInit {
             this.updateItemCountAndTotalSlots();
           }
         });
+        this.subscriptions.push(definitionsLoadedSub);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    // Clean up all subscriptions to prevent memory leaks
+    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.subscriptions = [];
   }
 
   // Calculate and update the item count and total slots
@@ -228,9 +240,10 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     this.connectDropLists();
 
     // Re-connect drop lists when they change (e.g., when rows/columns are added/removed)
-    this.dropLists.changes.subscribe(() => {
+    const dropListsSub = this.dropLists.changes.subscribe(() => {
       this.connectDropLists();
     });
+    this.subscriptions.push(dropListsSub);
 
     // Use setTimeout to defer the call to onItemDensityChange until after the change detection cycle is complete
     // This prevents ExpressionChangedAfterItHasBeenCheckedError
@@ -286,7 +299,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
         }
 
         // Still try to subscribe again in case the item definitions are loaded later
-        this.inventoryService.itemDefinitionsLoaded$.pipe(
+        const definitionsLoadedSub = this.inventoryService.itemDefinitionsLoaded$.pipe(
           // Skip the first emission (which we just processed)
           // and take only the next one where loaded is true
           take(1)
@@ -297,6 +310,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
             this.updateItemCountAndTotalSlots();
           }
         });
+        this.subscriptions.push(definitionsLoadedSub);
       }
     });
   }
@@ -323,7 +337,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
         }
 
         // Still try to subscribe again in case the item definitions are loaded later
-        this.inventoryService.itemDefinitionsLoaded$.pipe(
+        const definitionsLoadedSub = this.inventoryService.itemDefinitionsLoaded$.pipe(
           // Skip the first emission (which we just processed)
           // and take only the next one where loaded is true
           take(1)
@@ -333,6 +347,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
             this.repopulateInventory();
           }
         });
+        this.subscriptions.push(definitionsLoadedSub);
       }
     });
   }
@@ -343,11 +358,6 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     return this.inventoryService.getRandomItem();
   }
 
-  // This method is no longer used with the new approach
-  // It's kept for backward compatibility
-  shouldHaveItem(): boolean {
-    return false; // Always return false as we now use a different approach
-  }
 
   // Helper method to get all current inventory items
   private getCurrentInventoryItems(): InventoryItem[] {
@@ -463,7 +473,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       } else {
         console.log('Waiting for item definitions to be loaded before repopulating after size adjustment...');
         // If not loaded yet, subscribe again to wait for it to be loaded
-        this.inventoryService.itemDefinitionsLoaded$.pipe(
+        const definitionsLoadedSub = this.inventoryService.itemDefinitionsLoaded$.pipe(
           // Skip the first emission (which we just processed)
           // and take only the next one where loaded is true
           take(1)
@@ -473,6 +483,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
             this.repopulateInventory();
           }
         });
+        this.subscriptions.push(definitionsLoadedSub);
       }
     });
   }
@@ -494,10 +505,145 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     // This method will be called continuously as the item is being dragged
   }
 
+  /**
+   * Animates the swapping of items between cells
+   * @param sourceCell The source cell DOM element
+   * @param targetCell The target cell DOM element
+   */
+  private animateItemSwap(sourceCell: HTMLElement, targetCell: HTMLElement): void {
+    // We need to wait for the Angular change detection to update the DOM
+    setTimeout(() => {
+      // Find the items in both cells
+      const itemInSourceCell = sourceCell.querySelector('.inventory-item');
+      const itemInTargetCell = targetCell.querySelector('.inventory-item');
+
+      if (itemInSourceCell) {
+        // Add a temporary class for animation
+        itemInSourceCell.classList.add('swapping');
+
+        // Remove the class after animation completes
+        setTimeout(() => {
+          itemInSourceCell.classList.remove('swapping');
+        }, 300);
+      }
+
+      if (itemInTargetCell) {
+        // Add a temporary class for animation
+        itemInTargetCell.classList.add('swapping');
+
+        // Remove the class after animation completes
+        setTimeout(() => {
+          itemInTargetCell.classList.remove('swapping');
+        }, 300);
+      }
+    }, 0);
+  }
+
+  /**
+   * Handles swapping items within the same inventory
+   */
+  private handleSameInventorySwap(
+    event: CdkDragDrop<InventoryItem[]>, 
+    rowIndex: number, 
+    targetInventory: InventoryItem[][], 
+    sourceRowIndex: number | null, 
+    targetCellIndex: number | null, 
+    sourceCellIndex: number | null
+  ): void {
+    if (sourceRowIndex !== null && targetCellIndex !== null && sourceCellIndex !== null) {
+      // Get the items
+      const sourceItem = targetInventory[sourceRowIndex][sourceCellIndex];
+      const targetItem = targetInventory[rowIndex][targetCellIndex];
+      console.log("🟢 Swapping items within same inventory", sourceItem, targetItem);
+
+      // Swap the items
+      targetInventory[rowIndex][targetCellIndex] = sourceItem;
+      targetInventory[sourceRowIndex][sourceCellIndex] = targetItem;
+
+      // Update the UI to reflect the changes
+      event.container.data[0] = sourceItem;
+      event.previousContainer.data[0] = targetItem;
+
+      // Animate the swap if the target cell had an item
+      if (targetItem.type) {
+        // Find the DOM elements for animation
+        const sourceCell = event.previousContainer.element.nativeElement;
+        const targetCell = event.container.element.nativeElement;
+
+        // Use the extracted animation method
+        this.animateItemSwap(sourceCell, targetCell);
+      }
+    }
+  }
+
+  /**
+   * Handles moving items between different inventories
+   */
+  private handleDifferentInventoryMove(
+    event: CdkDragDrop<InventoryItem[]>, 
+    rowIndex: number, 
+    targetInventory: InventoryItem[][], 
+    sourceInventory: InventoryItem[][] | null, 
+    sourceRowIndex: number | null, 
+    targetCellIndex: number | null, 
+    sourceCellIndex: number | null
+  ): void {
+    if (sourceInventory && sourceRowIndex !== null && targetCellIndex !== null && sourceCellIndex !== null) {
+      // Check if the item can be moved to the target container
+      const sourceItem = sourceInventory[sourceRowIndex][sourceCellIndex];
+      const targetElement = event.container.element.nativeElement;
+      const targetTable = targetElement.closest('.inventory-table');
+
+      if (targetTable) {
+        const whitelist = targetTable.getAttribute('data-item-filter-whitelist');
+        const blacklist = targetTable.getAttribute('data-item-filter-blacklist');
+
+        if (this.canMoveItem(sourceItem, whitelist, blacklist)) {
+          // Get the target item (if any)
+          const targetItem = targetInventory[rowIndex][targetCellIndex];
+
+          console.log("Moving between inventories", sourceItem, targetItem);
+
+          // Update the data model
+          targetInventory[rowIndex][targetCellIndex] = sourceItem;
+          sourceInventory[sourceRowIndex][sourceCellIndex] = targetItem;
+
+          // Update the UI to reflect the changes
+          event.container.data[0] = sourceItem;
+          event.previousContainer.data[0] = targetItem;
+
+          // If the target cell had an item, log the swap and animate it back
+          if (targetItem.type) {
+            console.log("Swapping items between containers");
+
+            // Find the DOM elements for animation
+            const sourceCell = event.previousContainer.element.nativeElement;
+            const targetCell = event.container.element.nativeElement;
+
+            // Use the extracted animation method
+            this.animateItemSwap(sourceCell, targetCell);
+          } else {
+            console.log("Moving to empty cell");
+          }
+        } else {
+          // If the item can't be moved, prevent the drop and show visual feedback
+          console.log("Can't move to this slot");
+          event.item.element.nativeElement.classList.add('invalid-drop');
+          setTimeout(() => {
+            event.item.element.nativeElement.classList.remove('invalid-drop');
+          }, 500);
+        }
+      }
+
+      console.log(`🟠 Move between different inventories`);
+    }
+  }
+
   drop(event: CdkDragDrop<InventoryItem[]>, rowIndex: number, targetInventory: InventoryItem[][]): void {
     // Remove the dragging class from the item when it's dropped
     const draggedItem = event.item.element.nativeElement;
     draggedItem.classList.remove('dragging');
+
     // Get the cell indices
     const targetCellIndex = this.getCellIndexFromContainer(event.container);
     const sourceCellIndex = this.getCellIndexFromContainer(event.previousContainer);
@@ -510,142 +656,17 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     if (event.previousContainer === event.container) {
       // Move within the same container (same cell)
       // This shouldn't happen with our setup, but handle it just in case
-      console.log("Moving within the same cell");
+      console.log("🟡 Moving within the same cell");
       return;
     } else if (targetInventory === this.getInventoryFromContainer(event.previousContainer)) {
       // Move within the same inventory but different cells
       const sourceRowIndex = this.getRowIndexFromContainer(event.previousContainer);
-
-      if (sourceRowIndex !== null && targetCellIndex !== null && sourceCellIndex !== null) {
-        // Get the items
-        const sourceItem = targetInventory[sourceRowIndex][sourceCellIndex];
-        const targetItem = targetInventory[rowIndex][targetCellIndex];
-
-        console.log("Swapping items within same inventory", sourceItem, targetItem);
-
-        // Swap the items
-        targetInventory[rowIndex][targetCellIndex] = sourceItem;
-        targetInventory[sourceRowIndex][sourceCellIndex] = targetItem;
-
-        // Update the UI to reflect the changes
-        event.container.data[0] = sourceItem;
-        event.previousContainer.data[0] = targetItem;
-
-        // Animate the swap if the target cell had an item
-        if (targetItem.type) {
-          // Find the DOM elements for animation
-          const sourceCell = event.previousContainer.element.nativeElement;
-          const targetCell = event.container.element.nativeElement;
-
-          // We need to wait for the Angular change detection to update the DOM
-          setTimeout(() => {
-            // Find the items in both cells
-            const itemInSourceCell = sourceCell.querySelector('.inventory-item');
-            const itemInTargetCell = targetCell.querySelector('.inventory-item');
-
-            if (itemInSourceCell) {
-              // Add a temporary class for animation
-              itemInSourceCell.classList.add('swapping');
-
-              // Remove the class after animation completes
-              setTimeout(() => {
-                itemInSourceCell.classList.remove('swapping');
-              }, 300);
-            }
-
-            if (itemInTargetCell) {
-              // Add a temporary class for animation
-              itemInTargetCell.classList.add('swapping');
-
-              // Remove the class after animation completes
-              setTimeout(() => {
-                itemInTargetCell.classList.remove('swapping');
-              }, 300);
-            }
-          }, 0);
-        }
-      }
+      this.handleSameInventorySwap(event, rowIndex, targetInventory, sourceRowIndex, targetCellIndex, sourceCellIndex);
     } else {
       // Move between different inventories
       const sourceInventory = this.getInventoryFromContainer(event.previousContainer);
       const sourceRowIndex = this.getRowIndexFromContainer(event.previousContainer);
-
-      if (sourceInventory && sourceRowIndex !== null && targetCellIndex !== null && sourceCellIndex !== null) {
-        // Check if the item can be moved to the target container
-        const sourceItem = sourceInventory[sourceRowIndex][sourceCellIndex];
-        const targetElement = event.container.element.nativeElement;
-        const targetTable = targetElement.closest('.inventory-table');
-
-        if (targetTable) {
-          const whitelist = targetTable.getAttribute('data-item-filter-whitelist');
-          const blacklist = targetTable.getAttribute('data-item-filter-blacklist');
-
-          if (this.canMoveItem(sourceItem, whitelist, blacklist)) {
-            // Get the target item (if any)
-            const targetItem = targetInventory[rowIndex][targetCellIndex];
-
-            console.log("Moving between inventories", sourceItem, targetItem);
-
-            // Update the data model
-            targetInventory[rowIndex][targetCellIndex] = sourceItem;
-            sourceInventory[sourceRowIndex][sourceCellIndex] = targetItem;
-
-            // Update the UI to reflect the changes
-            event.container.data[0] = sourceItem;
-            event.previousContainer.data[0] = targetItem;
-
-            // If the target cell had an item, log the swap and animate it back
-            if (targetItem.type) {
-              console.log("Swapping items between containers");
-
-              // Find the DOM elements for animation
-              const sourceCell = event.previousContainer.element.nativeElement;
-              const targetCell = event.container.element.nativeElement;
-
-              // We need to wait for the Angular change detection to update the DOM
-              setTimeout(() => {
-                // Find the items in both cells
-                const itemInSourceCell = sourceCell.querySelector('.inventory-item');
-                const itemInTargetCell = targetCell.querySelector('.inventory-item');
-
-                if (itemInSourceCell) {
-                  // Add a temporary class for animation
-                  itemInSourceCell.classList.add('swapping');
-
-                  // Remove the class after animation completes
-                  setTimeout(() => {
-                    itemInSourceCell.classList.remove('swapping');
-                  }, 300);
-                }
-
-                if (itemInTargetCell) {
-                  // Add a temporary class for animation
-                  itemInTargetCell.classList.add('swapping');
-
-                  // Remove the class after animation completes
-                  setTimeout(() => {
-                    itemInTargetCell.classList.remove('swapping');
-                  }, 300);
-                }
-              }, 0);
-            } else {
-              console.log("Moving to empty cell");
-            }
-
-            // Force change detection to update the view
-            setTimeout(() => {
-              // This timeout helps ensure the UI updates properly
-            }, 0);
-          } else {
-            // If the item can't be moved, prevent the drop and show visual feedback
-            console.log("Can't move to this slot");
-            event.item.element.nativeElement.classList.add('invalid-drop');
-            setTimeout(() => {
-              event.item.element.nativeElement.classList.remove('invalid-drop');
-            }, 500);
-          }
-        }
-      }
+      this.handleDifferentInventoryMove(event, rowIndex, targetInventory, sourceInventory, sourceRowIndex, targetCellIndex, sourceCellIndex);
     }
 
     // Update item count and total slots after inventory changes
